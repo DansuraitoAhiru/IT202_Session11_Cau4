@@ -19,8 +19,8 @@ VALUES
 
 -- Đề xuất 2 giải pháp
 -- Cách 1: dùng IF/ELSE
--- Nếu có ID → tìm theo ID
--- Else nếu có Phone → tìm theo Phone
+-- Nếu có ID thì tìm theo ID
+-- Else nếu có Phone thì tìm theo Phone
 -- Cách 2: dùng nhiều câu lệnh truy vấn điều kiện trong where
 -- vd: WHERE (patient_id = p_patient_id OR p_patient_id IS NULL) AND (phone = p_phone OR p_phone IS NULL)
 
@@ -29,10 +29,10 @@ VALUES
 -- Cách 2 sẽ bị phức tạp, khó hiểu, dễ nhầm logic hơn, hiệu năng ko tốt bằng và chắc cũng hiếm được dùng nhiều
 
 -- Luồng xử lý:
--- Nếu cả 2 NULL → báo lỗi
+-- Nếu cả 2 NULL thì báo lỗi
 -- Nếu có ID thì tìm theo ID
 -- Else nếu có Phone tìm theo Phone
--- Nếu không tìm thấy: trả nợ = 0 + message lỗi
+-- Nếu không tìm thấy: due = 0 + message lỗi
 -- Nếu tìm thấy trả về total_due
 
 -- code
